@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, ImageList, ImageListItem } from '@mui/material';
+import { Box, ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 
 const itemData = [
     {
@@ -55,10 +55,11 @@ const itemData = [
 function Test() {
     return (
         <Box>
-            <ImageList sx={{ width: 400, height: 400 }} cols={3}>
+            <ImageList variant='standard' sx={{ width: 400, height: 400 }} cols={3}>
                 {itemData.map((image, index) => (
                     <ImageListItem key={index}>
                         <img src={image.img} alt={image.title} loading='lazy' />
+                        <ImageListItemBar position='below' subtitle={<span>Michael</span>} title={image.title} />
 
                     </ImageListItem>
                 ))}
