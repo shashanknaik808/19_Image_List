@@ -54,7 +54,16 @@ const itemData = [
 
 function Test() {
     return (
-        <div>Test</div>
+        <Box>
+            <ImageList sx={{ width: 400, height: 400 }} cols={3}>
+                {itemData.map((image, index) => (
+                    <ImageListItem key={index}>
+                        <img src={image.img} alt={image.title} loading='lazy' />
+
+                    </ImageListItem>
+                ))}
+            </ImageList>
+        </Box>
     )
 }
 
